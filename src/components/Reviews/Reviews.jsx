@@ -11,7 +11,7 @@ const Reviews = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [reviews, setCast] = useState([]);
-  const [error, setError] = useState(false);
+  const [ , setError] = useState(false);
 
   useEffect(() => {
     try {
@@ -28,9 +28,8 @@ const Reviews = () => {
       setError(true);
       setIsLoading(false);
       Notiflix.Notify.failure('Oops... Something went wrong please try again!');
-      console.log(error);
     }
-  }, [error, movieId]);
+  }, [movieId]);
 
   return (
     <div>
@@ -46,7 +45,7 @@ const Reviews = () => {
           ))}
         </ul>
       ) : (
-        'Sorry no information'
+        <span>Sorry no information</span>
       )}
     </div>
   );

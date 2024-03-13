@@ -12,7 +12,7 @@ const Cast = () => {
   const { movieId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [cast, setCast] = useState([]);
-  const [error, setError] = useState(false);
+  const [ , setError] = useState(false);
 
   useEffect(() => {
     try {
@@ -29,9 +29,8 @@ const Cast = () => {
       setError(true);
       setIsLoading(false);
       Notiflix.Notify.failure('Oops... Something went wrong please try again!');
-      console.log(error);
     }
-  }, [error, movieId]);
+  }, [movieId]);
 
   return (
     <div>
